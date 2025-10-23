@@ -7,6 +7,7 @@ Material de suporte para as aulas de Computeção Gráfica da [Licenciatura em V
 * All source code by Diogo Andrade is licensed under the [MIT] license.
 * [Cat Fighter](https://www.fab.com/listings/ccd1f5f9-0183-4406-ae85-573a636989f3) by [Palatial Studio](https://www.fab.com/sellers/Palatial%20Studio), licensed under [CC-BY 4.0]
 * [Objects Interior(Village) Alpha](https://www.fab.com/listings/14a08556-64cb-4a80-ac5c-25d60e37016e) by [Elbolillo](https://www.fab.com/sellers/Elbolillo), licensed under [CC-BY 4.0]
+* [Bricks 078](https://ambientcg.com/a/Bricks078) by [AmbientCG](https://ambientcg.com/), licensed under [CC0]
 
 # Metadata
 
