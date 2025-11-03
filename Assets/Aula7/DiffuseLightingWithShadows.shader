@@ -28,12 +28,12 @@ Shader "Custom Lighting/Diffuse Lighting (Shadows)"
             #pragma fragment frag
             #pragma target   4.5
 
-            // URP lighting keywords (no shadows here to keep it simple) - this is a bit of a black art and keeps changing
-            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHTS
-            #pragma multi_compile_fragment _ _FORWARD_PLUS
-            #pragma multi_compile_fragment _ _MAIN_LIGHT_SHADOWS
-            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS    
-            #pragma multi_compile_fragment _ _SHADOWS_SOFT
+            // URP lighting keywords
+            #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE
+            #pragma multi_compile  _ _ADDITIONAL_LIGHTS
+            #pragma multi_compile  _ _FORWARD_PLUS
+            #pragma multi_compile  _ _ADDITIONAL_LIGHT_SHADOWS    
+            #pragma multi_compile  _ _SHADOWS_SOFT
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
@@ -76,7 +76,7 @@ Shader "Custom Lighting/Diffuse Lighting (Shadows)"
                 half3 ambient = unity_AmbientSky.rgb;
 
                 // Main directional light
-                Light mainLight = GetMainLight();
+                Light mainLight = GetMainLight(TransformWorldToShadowCoord(IN.positionWS));
                 half3 diffuse   = Lambert(N, mainLight);
 
                 // --- Additional lights
@@ -107,7 +107,6 @@ Shader "Custom Lighting/Diffuse Lighting (Shadows)"
                     LIGHT_LOOP_END
                 #endif
 
-                // Just output the parameter color; no lighting.
                 return half4(ambient + diffuse, 1);
             }
             ENDHLSL

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DiffuseWithShadows
-  m_Shader: {fileID: 4800000, guid: 50903d0eac292e944b166ad15a2d3ead, type: 3}
+  m_Name: DiffuseWithAcumulatedCrosshatchedShadows
+  m_Shader: {fileID: 4800000, guid: 8e68dae7bd5d4ee478115c91dd1c102f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,9 +22,16 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _HatchTex:
+        m_Texture: {fileID: 2800000, guid: 9c3e86461723024459c30bfe889134cb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Rotation: 2.44
+    - _Scale: 0.2
+    - _Test: 1
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
